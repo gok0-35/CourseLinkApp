@@ -1,0 +1,36 @@
+@using Microsoft.AspNetCore.Http.Features
+@model IEnumerable<Course>
+    <h2>Course List</h2>
+    <a class="btn btn-primary" href="/Course/Create">Add Course</a>
+    <hr>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th style="width: 150px;">@Html.DisplayNameFor(m => m.CourseId)</th>
+                <th>@Html.DisplayNameFor(m => m.CourseName)</th>
+                <th>@Html.DisplayNameFor(m => m.Teacher.NameFull)</th>
+                <th style="width: 150px;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var course in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => course.CourseId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => course.CourseName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => course.Teacher.NameFull)
+
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@course.CourseId" class="btn btn-sm btn-primary">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@course.CourseId" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>

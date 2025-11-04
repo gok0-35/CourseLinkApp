@@ -1,0 +1,18 @@
+@model Course
+
+<h2>Add Course</h2>
+<hr>
+<form asp-controller="Course" asp-action="Create" method="post">
+    <div asp-validation-summary="All"></div>
+    <div class="mb-3">
+        <label asp-for="CourseName" class="form-label"></label>
+        <input asp-for="CourseName" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="TeacherId" class="form-label">Teacher</label>
+        <select asp-for="TeacherId" asp-items="ViewBag.Teachers" class="form-select">
+            <option value="">Select Teacher</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-secondary">Save Changes</button>
+</form>
