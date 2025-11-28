@@ -29,5 +29,3 @@ CourseLinkApp, ASP.NET Core MVC ile geliştirilmiş bir kurs yönetim uygulamas�
 - SQLite
 - Razor Views
 - Bootstrap / CSS
-
-## 📂 Proje Yapısı
